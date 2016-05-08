@@ -10,9 +10,12 @@
 
 import stanford.karel.*;
 
+// Karol is defined as a class
+// here we are creating a custom Karol robot
 public class CollectNewspaperKarel extends Karel {
 	
-	// You fill in this part
+	// main method, entry point 
+	// where program starts running 
 	public void run(){
 		move();
 		move();
