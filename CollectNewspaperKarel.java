@@ -17,6 +17,10 @@ public class CollectNewspaperKarel extends SuperKarel {
 	// main method, entry point 
 	// where program starts running 
 	public void run(){
+		pickUpNewspaper();
+		returnToOrigin();
+	}
+	private void pickUpNewspaper(){
 		move();
 		move();
 		turnRight();
@@ -25,5 +29,15 @@ public class CollectNewspaperKarel extends SuperKarel {
 		move();
 		pickBeeper();
 	}
-	
+	private void returnToOrigin(){
+		//how to make this funciton 
+		turnAround();
+		move();
+		turnRight();
+		move();
+		turnLeft();
+		move();
+		move();
+		turnAround();
+	}
 }
