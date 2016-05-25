@@ -15,27 +15,12 @@ import stanford.karel.*;
 public class MidpointFindingKarel extends SuperKarel {
 
 	public void run() {
-		putBeeper();
-		while(frontIsClear()){
-			moveAndPutBeeper();			
-		}
-
-		
-		//when facin the wall 
-		//empty the bag
-		int emptyBag = 0;
-		setBeepersInBag(emptyBag);
+		putBeepersAlongTheStreet();				
+		emptyKarelsBag();		
 		turnAround();
-		while (frontIsClear()) {
-			pickBeeper();
-			move();
-		}
-		pickBeeper();
+		recoverBeepersOnTheStreet();
 		turnAround();
-		for(int i=0; i< getBeepersInBag()/2; i++){
-			move();
-		}
-		putBeeper();
+		placeBeeperInTheMiddleOfTheStreet();
 		
 	}
 	private void moveAndPutBeeper() {
@@ -44,5 +29,27 @@ public class MidpointFindingKarel extends SuperKarel {
 			putBeeper();	
 		}		
 	}
-
+    private void emptyKarelsBag() {
+		int emptyBag = 0;
+		setBeepersInBag(emptyBag);
+	}
+    private void putBeepersAlongTheStreet() {
+    	putBeeper();		
+		while(frontIsClear()){
+			moveAndPutBeeper();			
+		}
+	}
+   private void recoverBeepersOnTheStreet() {
+	   while (frontIsClear()) {
+			pickBeeper();
+			move();
+		}
+		pickBeeper();
+   }
+   private void placeBeeperInTheMiddleOfTheStreet() {
+	   for(int i=0; i< getBeepersInBag()/2; i++){
+			move();
+		}
+		putBeeper();
+}
 }
